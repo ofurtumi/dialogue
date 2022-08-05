@@ -10,6 +10,10 @@
  */
 
 window.onload = () => {
+	if (window.location.hostname === 'www.sjomli.is') {
+		getNav();
+	}
+
 	const input = document.querySelector('#input');
 	const output = document.querySelector('#prison');
 	const start = document.querySelector('#start');
@@ -25,10 +29,6 @@ window.onload = () => {
 	start.addEventListener('click', spila);
 
 	async function spila() {
-		if (window.location.hostname === 'www.sjomli.is') {
-			getNav();
-		}
-
 		if (playing) {
 			speed = speed * 0.25;
 		} else {
