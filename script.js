@@ -1,17 +1,15 @@
-/**
-|||||||||||||||||||||||||||||||||
+/**||||||||||||||||||||||||||||||
 ||    __                 __    ||
 ||  _/  |_ __ __  _____ |__|   ||
 ||  \   __\  |  \/     \|  |   ||
 ||   |  | |  |  /  Y Y  \  |   ||
 ||   |__| |____/|__|_|__/__|   ||
 ||                             ||
-|||||||||||||||||||||||||||||||||
- */
+||||||||||||||||||||||||||||||**/
 
 window.onload = () => {
-	if (window.location.hostname === 'www.sjomli.is') {
-		getNav();
+	if (window.location.hostname !== 'www.sjomli.is') {
+		document.querySelector('header').remove();
 	}
 
 	const input = document.querySelector('#input');
@@ -73,31 +71,6 @@ window.onload = () => {
 		}
 	}
 };
-
-function getNav() {
-	let header = document.createElement('header');
-	let nav = document.createElement('nav');
-	let ul = document.createElement('ul');
-	let home = document.createElement('li');
-	let proj = document.createElement('li');
-	let cv = document.createElement('li');
-	let aHome = document.createElement('a');
-	aHome.setAttribute('href', '/');
-	aHome.textContent = 'heim';
-	let aProj = document.createElement('a');
-	aProj.setAttribute('href', '/verkefni');
-	aProj.textContent = 'verkefni';
-	let aCv = document.createElement('a');
-	aCv.setAttribute('href', '/ferilskra.pdf');
-	aCv.textContent = 'ferilskrá';
-	home.appendChild(aHome);
-	proj.appendChild(aProj);
-	cv.appendChild(aCv);
-	ul.append(home, proj, cv);
-	nav.appendChild(ul);
-	header.appendChild(nav);
-	document.querySelector('body').prepend(header);
-}
 
 function getCharPos(char) {
 	if (!isNaN(Number(char))) {
